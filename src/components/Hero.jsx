@@ -149,7 +149,7 @@ import dipeshimage from './Dipesh_Pandit.jpeg';
                     <Heading fontSize="2.5rem" >Dipesh Pandit</Heading>
                     <Heading fontSize="1.5rem" fontWeight={400} pt="0.5rem">Front-end Developer</Heading>
                     <HStack pt="2rem">
-                      <Button colorScheme="purple" onClick={() => window.open("https://drive.google.com/file/d/16mt9zZ10gJguJ-XWQiT-48k0jox4_7pM/view?usp=sharing")}>Resume</Button>
+                      <Button colorScheme="purple" onClick={() => window.open("https://drive.google.com/file/d/1-0xGQupBKGXZEwBbiKSVbZNkF1mm73bF/view?usp=sharing")}>Resume</Button>
                       <Button colorScheme="purple" onClick={() => window.open("https://www.linkedin.com/in/dipeshpandit12/")}>Linkedin</Button>
                     </HStack>
                   </Flex>

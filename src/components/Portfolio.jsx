@@ -115,7 +115,7 @@ export default function Portfolio() {
       YouTube: [
         {
           name: "My Introduction Video",
-          image_url:"https://i9.ytimg.com/vi_webp/EbfHmuuzqUE/mqdefault.webp?v=66823c80&sqp=CID5iLQG&rs=AOn4CLCyrWbdUChvBAzMQ19SBfGB8aHvtg",
+          image_url:"https://img.youtube.com/vi/EbfHmuuzqUE/sddefault.jpg",
           first_icon:<ViewIcon/>,
           first_icon_name : "Watch",
           first_icon_url: "https://youtu.be/EbfHmuuzqUE",
@@ -237,7 +237,7 @@ export default function Portfolio() {
       },
         {
         name: "बिरुवा - Short poem",
-        image_url:"https://i.ytimg.com/an_webp/rFGsNIzp8XE/mqdefault_6s.webp?du=3000&sqp=CLXUiLQG&rs=AOn4CLDigY1geCCHKTClwULcM8b-MUWXYA",
+        image_url:"https://img.youtube.com/vi/rFGsNIzp8XE/sddefault.jpg",
         first_icon:<ViewIcon/>,
         first_icon_name : "Watch",
         first_icon_url: "https://www.youtube.com/watch?v=rFGsNIzp8XE&t=54s",
