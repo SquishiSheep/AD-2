@@ -51,7 +51,7 @@ export default function Portfolio() {
       WebProjects: [
         {
           name: "Hamro Opportunity",
-          image_url:"https://diwaspandit.com.np/assets/img/portfolio/web_hamroopportunity_extracurricular.jpeg",
+          image_url:"hamro_opportunity.jpg",
           first_icon_url: "https://hamroopportunity.github.io/",
           first_icon:<ViewIcon/>,
           first_icon_name : "Demo",
@@ -61,17 +61,17 @@ export default function Portfolio() {
         },
         {
           name: "Ecommerce Website",
-          image_url:"https://diwaspandit.com.np/assets/img/portfolio/sabtrade.jpeg",
+          image_url:"sab_trade.jpg",
           first_icon_url: "https://sabtradelink.com.np/",
           first_icon:<ViewIcon/>,
           first_icon_name : "Demo",
           second_icon:<FaGithub/>,
           second_icon_name:"Code",
-          second_icon_url: "https://sabtradelink.com.np/",
+          second_icon_url: "/",
         },
         {
           name: "Login /Sign up With Firebase",
-          image_url:"https://dipeshpandit.vercel.app/static/media/loginwithfirebase.842a1c40c39db578a3ba.png",
+          image_url:"login.jpg",
           first_icon_url: "https://loginwithfirebase.vercel.app/",
           first_icon:<ViewIcon/>,
           first_icon_name : "Demo",
@@ -81,7 +81,7 @@ export default function Portfolio() {
         },
         {
           name: "Twin Box - Cloud Storage",
-          image_url:"https://dipeshpandit.vercel.app/static/media/twinbox.f9efa4dcb3a567f89fbd.png",
+          image_url:"twin_box.jpg",
           first_icon_url: "https://twinbox.vercel.app/",
           first_icon:<ViewIcon/>,
           first_icon_name : "Demo",
@@ -91,7 +91,7 @@ export default function Portfolio() {
         },
         {
           name: "Little Lemon - Restaurant",
-          image_url:"https://dipeshpandit.vercel.app/static/media/littlelemon.e2a5c80d541aab62b1c0.png",
+          image_url:"little_lemon.jpg",
           first_icon_url: "https://littlelemon-gold.vercel.app/",
           first_icon:<ViewIcon/>,
           first_icon_name : "Demo",
@@ -101,7 +101,7 @@ export default function Portfolio() {
         },
         {
           name: "Ghar - Social Group",
-          image_url:"https://diwaspandit.com.np/assets/img/portfolio/ghar.jpeg",
+          image_url:"ghar.jpg",
           first_icon_url: "https://ghar1.github.io/",
           first_icon:<ViewIcon/>,
           first_icon_name : "Demo",
@@ -115,7 +115,7 @@ export default function Portfolio() {
       YouTube: [
         {
           name: "My Introduction Video",
-          image_url:"https://img.youtube.com/vi/EbfHmuuzqUE/sddefault.jpg",
+          image_url:"intro.jpg",
           first_icon:<ViewIcon/>,
           first_icon_name : "Watch",
           first_icon_url: "https://youtu.be/EbfHmuuzqUE",
@@ -125,7 +125,7 @@ export default function Portfolio() {
         },
         {
         name: "Doumentary - History of Simara",
-        image_url:"https://diwaspandit.com.np/assets/img/portfolio/video_simara.jpeg",
+        image_url:"video_simara.jpg",
         first_icon:<ViewIcon/>,
         first_icon_name : "Watch",
         first_icon_url: "https://www.youtube.com/watch?v=r8c4ts9tt3c&t=7s",
@@ -135,7 +135,7 @@ export default function Portfolio() {
       },
       {
         name: "Forest - Cinematic Shot",
-        image_url:"https://diwaspandit.com.np/assets/img/portfolio/video_forest.jpeg",
+        image_url:"video_forest.jpg",
         first_icon:<ViewIcon/>,
         first_icon_name : "Watch",
         first_icon_url: "https://www.youtube.com/watch?v=3SA2cleSnsI",
@@ -145,7 +145,7 @@ export default function Portfolio() {
       },
       {
         name: "A Day in Lockdown - Quarantine life",
-        image_url:"https://diwaspandit.com.np/assets/img/portfolio/video_lockdown.jpeg",
+        image_url:"video_lockdown.jpg",
         first_icon:<ViewIcon/>,
         first_icon_name : "Watch",
         first_icon_url: "https://www.youtube.com/watch?v=GFDvoq9uV0k&t=2s",
@@ -155,7 +155,7 @@ export default function Portfolio() {
       },
       {
         name: "Bhundol - Vlog",
-        image_url:"https://diwaspandit.com.np/assets/img/portfolio/video_bhundol.jpeg",
+        image_url:"video_bhundol.jpg",
         first_icon:<ViewIcon/>,
         first_icon_name : "Watch",
         first_icon_url: "https://www.youtube.com/watch?v=s6D4zyCzTlA&t=30s",
@@ -165,7 +165,7 @@ export default function Portfolio() {
       },
       {
         name: "Kalinchowk - Trailer",
-        image_url:"https://diwaspandit.com.np/assets/img/portfolio/video_kalinchowk.jpeg",
+        image_url:"video_kalinchowk.jpg",
         first_icon:<ViewIcon/>,
         first_icon_name : "Watch",
         first_icon_url: "https://www.youtube.com/watch?v=s6D4zyCzTlA&t=30s",
@@ -179,7 +179,7 @@ export default function Portfolio() {
       Design: [
         {
         name: "Graphic Design - Posts, Cover photo",
-        image_url:"https://scontent.fktm7-1.fna.fbcdn.net/v/t39.30808-6/366210858_295768569696721_6993818280493078242_n.png?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=xHxEIlYumNwQ7kNvgGV2xRV&_nc_ht=scontent.fktm7-1.fna&oh=00_AYDC1QYleCBLl9bX-thqkL8IQLLzdXrCOrwczN6wXJeTDQ&oe=6688243A",
+        image_url:"/",
         first_icon:<ViewIcon/>,
         first_icon_name : "View",
         first_icon_url: "https://www.facebook.com/sabtradelink",
@@ -189,7 +189,7 @@ export default function Portfolio() {
       },
         {
         name: "Graphic Design - Logo, Cover photo, Brochures",
-        image_url:"https://scontent.fktm10-1.fna.fbcdn.net/v/t39.30808-6/358389055_112918215190134_2193093887622241493_n.png?stp=dst-png_s960x960&_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=hU1R4wyxRj0Q7kNvgE8keLS&_nc_ht=scontent.fktm10-1.fna&oh=00_AYCcNFmp6dTYvBiYJXTOmBv7fmOAfmbfhM2fJX4AUMp3wA&oe=66880CB6",
+        image_url:"/",
         first_icon:<ViewIcon/>,
         first_icon_name : "View",
         first_icon_url: "https://www.facebook.com/kidsfuturejapan",
@@ -203,7 +203,7 @@ export default function Portfolio() {
       Competition: [
         {
         name: "Photography Competition - TOP 10",
-        image_url:"https://scontent.fktm10-1.fna.fbcdn.net/v/t39.30808-6/326259834_760277858947379_2176005957830569072_n.jpg?stp=dst-jpg_s720x720&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6n39eDiVGjEQ7kNvgGfn2CS&_nc_ht=scontent.fktm10-1.fna&oh=00_AYA37vk_M9-Jm0CFNFG5q4sxGI98AuAi585hjtX4JCSAxQ&oe=66883397",
+        image_url:"/",
         first_icon:<ViewIcon/>,
         first_icon_name : "View",
         first_icon_url: "https://www.facebook.com/PhotographyLOCUS/posts/pfbid0ZXSbtBe9eR4dYcwCwrxPyRD2TQw1BLRULQPEWNgcYfSC3fuPzFSHK7GBe7kiJwJ6l?rdid=P290yiCZsjdymgho",
@@ -217,7 +217,7 @@ export default function Portfolio() {
       Collaboration: [
         {
         name: "International Womens' Day",
-        image_url:"https://diwaspandit.com.np/assets/img/portfolio/video_sas.jpeg",
+        image_url:"/",
         first_icon:<ViewIcon/>,
         first_icon_name : "Watch",
         first_icon_url: "https://www.youtube.com/watch?v=HkrVrO9wWT4&t=120s",
@@ -227,7 +227,7 @@ export default function Portfolio() {
       },
         {
         name: "Timro Maya - Music Video",
-        image_url:"https://i.ytimg.com/vi/HKmHjJoGLZI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBzxEolpZTTGx4TyzovDS5xIEhbiQ",
+        image_url:"/",
         first_icon:<ViewIcon/>,
         first_icon_name : "Watch",
         first_icon_url: "https://www.youtube.com/watch?v=HKmHjJoGLZI",
@@ -237,7 +237,7 @@ export default function Portfolio() {
       },
         {
         name: "बिरुवा - Short poem",
-        image_url:"https://img.youtube.com/vi/rFGsNIzp8XE/sddefault.jpg",
+        image_url:"/",
         first_icon:<ViewIcon/>,
         first_icon_name : "Watch",
         first_icon_url: "https://www.youtube.com/watch?v=rFGsNIzp8XE&t=54s",
@@ -305,7 +305,6 @@ export default function Portfolio() {
           {tabs_panel_list.map((tab_panel, index) => (
             <TabPanel key={index}>
               <SimpleGrid  columns={{base:1,md:2,lg:3}} minChildWidth="16rem" spacing={6} mt="2rem" align="center">
-              
                 {Object.keys(tab_panel).map((category) => {
                   const items = tab_panel[category];
                   // Check if the category is an array (like "Web Projects"), otherwise wrap it in an array
@@ -324,7 +323,7 @@ export default function Portfolio() {
                     <CardBody p="0"  overflow="hidden">
                       <Center>
                         <Image
-                          src={item.image_url}
+                          src={`/images/${item.image_url}`}
                           maxwidth="17rem"
                           height="10rem"
                           transform='scale(1.1)'
@@ -361,7 +360,6 @@ export default function Portfolio() {
                   ));
 
                 })}
-                
               </SimpleGrid>
             </TabPanel>
           ))}

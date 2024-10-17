@@ -29,7 +29,6 @@ import dipeshimage from './Dipesh_Pandit.jpeg';
       { name: 'React', url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
       { name: 'Express JS', url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg" },
       { name: 'Node JS', url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" },
-      { name: 'Typescript', url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
       { name: 'Mongodb', url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
       { name: 'Office 365', url: "https://www.e-office.com/__asset?url=/wp-content/uploads/2023/05/365.png" },
       { name: 'Figma', url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
@@ -43,7 +42,7 @@ import dipeshimage from './Dipesh_Pandit.jpeg';
     const projects_list= [
       {
         name: "Ghar - Social Group",
-        image_url:"https://diwaspandit.com.np/assets/img/portfolio/ghar.jpeg",
+        image_url:"ghar.jpg",
         demo_url: "https://ghar1.github.io/",
         first_icon:<ViewIcon/>,
         first_icon_name : "Demo",
@@ -53,27 +52,27 @@ import dipeshimage from './Dipesh_Pandit.jpeg';
       },
       {
         name: "Hamro Opportunity",
-        image_url:"https://diwaspandit.com.np/assets/img/portfolio/web_hamroopportunity_extracurricular.jpeg",
-        first_icon_url: "https://hamroopportunity.github.io/",
+        image_url:"hamro_opportunity.jpg",
+        demo_url: "https://hamroopportunity.github.io/",
         first_icon:<ViewIcon/>,
         first_icon_name : "Demo",
         second_icon:<FaGithub/>,
         second_icon_name:"Code",
-        second_icon_url: "https://github.com/hamroopportunity/hamroopportunity.github.io",
+        code_url: "https://github.com/hamroopportunity/hamroopportunity.github.io",
       },
       {
         name: "Ecommerce Website",
-        image_url:"https://diwaspandit.com.np/assets/img/portfolio/sabtrade.jpeg",
+        image_url:"sab_trade.jpg",
         demo_url: "https://sabtradelink.com.np/",
         first_icon:<ViewIcon/>,
         first_icon_name : "Demo",
         second_icon:<FaGithub/>,
         second_icon_name:"Code",
-        code_url: "https://sabtradelink.com.np/",
+        code_url: "/",
       },
       {
         name: "Login /Sign up With Firebase",
-        image_url:"https://dipeshpandit.vercel.app/static/media/loginwithfirebase.842a1c40c39db578a3ba.png",
+        image_url:"login.jpg",
         demo_url: "https://loginwithfirebase.vercel.app/",
         first_icon:<ViewIcon/>,
         first_icon_name : "Demo",
@@ -83,7 +82,7 @@ import dipeshimage from './Dipesh_Pandit.jpeg';
       },
       {
         name: "Twin Box - Cloud Storage",
-        image_url:"https://dipeshpandit.vercel.app/static/media/twinbox.f9efa4dcb3a567f89fbd.png",
+        image_url:"twin_box.jpg",
         demo_url: "https://twinbox.vercel.app/",
         first_icon:<ViewIcon/>,
         first_icon_name : "Demo",
@@ -93,7 +92,7 @@ import dipeshimage from './Dipesh_Pandit.jpeg';
       },
       {
         name: "Little Lemon - Restaurant",
-        image_url:"https://dipeshpandit.vercel.app/static/media/littlelemon.e2a5c80d541aab62b1c0.png",
+        image_url:"little_lemon.jpg",
         demo_url: "https://littlelemon-gold.vercel.app/",
         first_icon:<ViewIcon/>,
         first_icon_name : "Demo",
@@ -147,10 +146,10 @@ import dipeshimage from './Dipesh_Pandit.jpeg';
                   <Flex flexDirection="column" alignItems={{base:"center",lg:"start"}} >
                     <Heading fontSize="1.4rem" fontWeight={400}>Hey! This is</Heading>
                     <Heading fontSize="2.5rem" >Dipesh Pandit</Heading>
-                    <Heading fontSize="1.5rem" fontWeight={400} pt="0.5rem">Front-end Developer</Heading>
+                    <Heading fontSize="1.2rem" fontWeight={400} pt="0.5rem">Aspiring Software Developer</Heading>
                     <HStack pt="2rem">
-                      <Button colorScheme="purple" onClick={() => window.open("https://drive.google.com/file/d/1-0xGQupBKGXZEwBbiKSVbZNkF1mm73bF/view?usp=sharing")}>Resume</Button>
                       <Button colorScheme="purple" onClick={() => window.open("https://www.linkedin.com/in/dipeshpandit12/")}>Linkedin</Button>
+                      <Button colorScheme="purple" onClick={() => window.open("https://github.com/dipeshpandit12/")}>Github</Button>
                     </HStack>
                   </Flex>
               </Box>
@@ -198,7 +197,7 @@ import dipeshimage from './Dipesh_Pandit.jpeg';
                   <CardBody p="0"  overflow="hidden">
                     <Center>
                       <Image
-                        src={project.image_url}
+                        src={`/images/${project.image_url}`}
                         maxwidth="17rem"
                         height="10rem"
                         transform='scale(1.1)'
