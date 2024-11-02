@@ -5,25 +5,20 @@ body {
     padding: 0;
 }
 
-nav a {
-    color: white;
-    margin: 0 1em;
-    text-decoration: none;
-}
-
 main {
     padding: 2em;
+    text-align: center;
 }
 
-footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    padding: 5px;
-    font-size: 12px;
-    text-align: center;
-    background-color: #333;
-    color: black
+h1 {
+    font-size: 24px;
+    margin-bottom: 1em;
+}
+
+p {
+    max-width: 600px;
+    margin: 0 auto 2em;
+    color: #333;
 }
 
 /* Tetris container and block styling */
@@ -33,6 +28,7 @@ footer {
     height: 60vh;
     background: #111;
     overflow: hidden;
+    margin-bottom: 1em;
 }
 
 .falling-block {
@@ -46,4 +42,43 @@ footer {
 @keyframes fall {
     from { top: 0; }
     to { top: 100%; }
+}
+
+/* Command input styling */
+#command-input {
+    margin: 1em 0;
+}
+
+#command-input input[type="text"] {
+    padding: 0.5em;
+    font-size: 16px;
+}
+
+#command-input button {
+    padding: 0.5em 1em;
+    font-size: 16px;
+}
+
+/* AI Popup styling */
+#ai-popup {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+}
+
+#chat-history p {
+    margin: 0.5em 0;
+}
+
+/* Footer styling */
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #333;
+    color: white;
 }

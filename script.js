@@ -13,6 +13,7 @@ function submitCommand() {
     aiPopup.style.display = 'block';
     const chatHistory = document.getElementById('chat-history');
     chatHistory.innerHTML += `<p>User Command: ${command}</p>`;
+
     const canSolve = Math.random() > 0.5; // Randomly decide for demonstration
     if (canSolve) {
         chatHistory.innerHTML += `<p>AI: I can handle this! Gathering information...</p>`;
