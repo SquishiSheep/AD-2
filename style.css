@@ -21,6 +21,25 @@ p {
     color: #333;
 }
 
+/* Header styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
 /* Tetris container and block styling */
 #tetris-container {
     position: relative;
