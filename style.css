@@ -1,103 +1,35 @@
-/* Basic styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-main {
-    padding: 2em;
-    text-align: center;
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 1em;
-}
-
-p {
-    max-width: 600px;
-    margin: 0 auto 2em;
-    color: #333;
-}
-
-/* Header styling */
-header {
-    background-color: #333;
-    color: white;
-    padding: 1em;
-    text-align: center;
-}
-
-header nav a {
-    color: white;
-    margin: 0 1em;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-/* Tetris container and block styling */
-#tetris-container {
+/* Ensure #falling-blocks container fits within #tetris-container */
+#falling-blocks {
     position: relative;
     width: 100%;
-    height: 60vh;
-    background: #111;
+    height: 100%;
     overflow: hidden;
-    margin-bottom: 1em;
 }
 
-.falling-block {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: #ff5722;
-    animation: fall 5s linear forwards;
-}
-
-@keyframes fall {
-    from { top: 0; }
-    to { top: 100%; }
-}
-
-/* Command input styling */
-#command-input {
-    margin: 1em 0;
-}
-
-#command-input input[type="text"] {
-    padding: 0.5em;
-    font-size: 16px;
-}
-
-#command-input button {
-    padding: 0.5em 1em;
-    font-size: 16px;
-}
-
-/* AI Popup styling */
+/* Style AI popup for better alignment and readability */
 #ai-popup {
     margin-top: 1em;
     padding: 1em;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#chat-history p {
-    margin: 0.5em 0;
+/* Add styling for #chat-history to improve readability */
+#chat-history {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0.5em;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 1em;
 }
 
-/* Footer styling */
-footer {
-    position: fixed;
+/* Add padding and font-size to chat input */
+#chat-input {
+    padding: 0.5em;
     width: 100%;
-    bottom: 0;
-    padding: 5px;
-    font-size: 12px;
-    text-align: center;
-    background-color: #333;
-    color: white;
+    font-size: 16px;
 }
