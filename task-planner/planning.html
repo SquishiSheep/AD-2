@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Planning - Task Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="planning.html">Start Planning</a>
+            <a href="calendar.html">Calendar</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Start Planning</h1>
+        <div id="tetris-container">
+            <div id="falling-blocks"></div>
+        </div>
+
+        <div id="command-input">
+            <input type="text" id="user-command" placeholder="Enter a task for AI..." />
+            <button onclick="submitCommand()">Submit</button>
+        </div>
+
+        <div id="ai-popup" style="display: none;">
+            <div id="chat-history"></div>
+            <input type="text" id="chat-input" placeholder="AI Response" />
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Task Planner</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
