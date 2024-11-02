@@ -23,13 +23,14 @@ main {
 }
 
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em;
     position: fixed;
     width: 100%;
     bottom: 0;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #333;
+    color: black
 }
 
 /* Tetris container and block styling */
