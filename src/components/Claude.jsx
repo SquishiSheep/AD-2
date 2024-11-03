@@ -1,16 +1,21 @@
-import { Box, Heading, VStack, UnorderedList, ListItem } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  VStack,
+  UnorderedList,
+  ListItem,
+} from "@chakra-ui/react";
 
 export default function Claud() {
   return (
     <>
       <Box height="100vh" m="3rem">
         <VStack height="100vh">
-          <Heading fontSize="xl" pb="4rem">
-            Curious how the model schedules doctor appointments? Click here to
-            learn more!{" "}
+          <Heading fontSize="1.5rem" pb="4rem">
+            Curious how the model schedules doctor appointments?
           </Heading>
           <iframe
-            width="50%"
+            width="40%"
             height="50%"
             src="https://www.youtube.com/embed/ODaHJzOyVCQ?si=BtIP7RO1_DEa5Wn3"
             title="YouTube video player"
@@ -18,11 +23,26 @@ export default function Claud() {
             allowFullScreen
           ></iframe>
           <UnorderedList pt="2rem">
-            <ListItem>Step 1: Patient submits an appointment request.</ListItem>
-            <ListItem>Step 2: Model processes the request and checks availability.</ListItem>
-            <ListItem>Step 3: Model suggests available time slots to the patient.</ListItem>
-            <ListItem>Step 4: Patient selects a preferred time slot.</ListItem>
-            <ListItem>Step 5: Confirmation of the appointment is sent to both patient and doctor.</ListItem>
+            <ListItem>Step 1: Receive the prompt from the user.</ListItem>
+            <ListItem>
+              Step 2: Check whether the provided information meets the criteria
+              for the steps taken.
+            </ListItem>
+            <ListItem>
+              Step 3: Start operating the computer and load the necessary steps.
+            </ListItem>
+            <ListItem>
+              Step 4: Book the appointment on the website using the provided
+              email.
+            </ListItem>
+            <ListItem>
+              Step 5: Download the appointment PDF and attach it to the
+              calendar.
+            </ListItem>
+            <ListItem>
+              Step 6: Conclude the process by indicating that the program has
+              ended.
+            </ListItem>
           </UnorderedList>
         </VStack>
       </Box>
