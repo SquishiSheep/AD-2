@@ -26,7 +26,7 @@ export default function StartPlanning() {
                 >
                     <Heading fontSize="md" opacity={0.8}>Let’s use the prompt to schedule the appointment.</Heading>
                     <Chatbox />
-                    <Link to="/claude"><Text fontSize="1rem" fontWeight="100" textAlign="right" mt="0" p="0" opacity={0.5} textDecoration="underline">How is it possible?</Text></Link>
+                    <Link to="/claude"><Text fontSize="1rem" fontWeight="100" textAlign="right" mt="0" p="0" opacity={0.5} textDecoration="underline">How is this possible?</Text></Link>
                 </VStack>
             </Box>
         </>
