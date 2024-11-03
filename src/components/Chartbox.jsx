@@ -1,8 +1,10 @@
 import { Card, CardHeader, CardBody, CardFooter, Box, Button, Icon, Flex, Text, Input, Avatar, Divider } from '@chakra-ui/react';
 import { useState, useRef, useEffect } from 'react';
 import { MdSend, MdFlashOn } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 export default function Chatbox() {
+    const navigate = useNavigate();
   const [userInput, setUserInput] = useState("");
   const [chatHistory, setChatHistory] = useState([
     {
@@ -41,7 +43,18 @@ export default function Chatbox() {
 
       if (awaitingDetails) {
         // If we're awaiting details, acknowledge the information provided
-        aiResponse = "I have created the appointment and kept the schedule in the calendar.";
+        aiResponse = (
+            <Flex align="center">
+              <Text>I have created the appointment and kept the schedule in the calendar. <Button
+                size="xs"
+                colorScheme="blue"
+                ml={2}
+                onClick={() => navigate('/progress')} // Redirect on click
+              >
+                Link
+              </Button> </Text>
+            </Flex>
+          );
         setAwaitingDetails(false); // Reset the state after getting the details
       } else if (userInput.toLowerCase().includes("appointment")) {
         aiResponse = "Can you please specify the hospital name, location, time available for this week, and your email so I can send the appointment confirmation?";
