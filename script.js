@@ -1,41 +1,33 @@
-// JavaScript for Falling Blocks and AI Interaction
-const fallingBlocksContainer = document.getElementById('falling-blocks');
+// Wait until iframe is loaded
+window.addEventListener("DOMContentLoaded", () => {
+    const iframe = document.getElementById("inputFrame");
 
-function submitCommand() {
-    const command = document.getElementById('user-command').value;
-    document.getElementById('user-command').value = ''; // Clear input
+    // Wait until iframe content is loaded, then access the input inside it
+    iframe.onload = () => {
+        const tetrisInput = iframe.contentDocument.getElementById('tetrisInput');
+        const tetrisBoard = document.getElementById('tetrisBoard');
 
-    // Generate a new Tetris block
-    createFallingBlock(command);
+        // Function to create and drop a block
+        function dropBlock() {
+            const text = tetrisInput.value.trim();
+            if (text) {
+                const block = document.createElement('div');
+                block.classList.add('block');
+                block.textContent = text;
 
-    // Simulate AI response (dummy logic)
-    const aiPopup = document.getElementById('ai-popup');
-    aiPopup.style.display = 'block';
-    const chatHistory = document.getElementById('chat-history');
-    chatHistory.innerHTML += `<p>User Command: ${command}</p>`;
+                // Append the block to the tetris board
+                tetrisBoard.appendChild(block);
 
-    const canSolve = Math.random() > 0.5; // Randomly decide for demonstration
-    if (canSolve) {
-        chatHistory.innerHTML += `<p>AI: I can handle this! Gathering information...</p>`;
-    } else {
-        chatHistory.innerHTML += `<p>AI: I cannot complete this task, but here are steps you can follow.</p>`;
-        addToCalendar(command); // Simulate adding to calendar
-    }
-}
+                // Clear the input field
+                tetrisInput.value = '';
+            }
+        }
 
-function createFallingBlock(command) {
-    const block = document.createElement('div');
-    block.className = 'falling-block';
-    block.innerText = command.slice(0, 3); // Display part of the command
-    block.style.left = Math.random() * 90 + 'vw'; // Random horizontal position
-    fallingBlocksContainer.appendChild(block);
-
-    // Remove the block after falling animation ends
-    block.addEventListener('animationend', () => {
-        block.remove();
-    });
-}
-
-function addToCalendar(task) {
-    console.log(`Task added to calendar: ${task}`);
-}
+        // Listen for Enter key to drop the block
+        tetrisInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                dropBlock();
+            }
+        });
+    };
+});

@@ -1,58 +1,47 @@
-/* Basic styling */
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
-    padding: 0;
-}
-
-main {
-    padding: 2em;
-    text-align: center;
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 1em;
-}
-
-p {
-    max-width: 600px;
-    margin: 0 auto 2em;
-    color: #333;
-}
-
-/* Tetris container and block styling */
-#tetris-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-/* Style AI popup for better alignment and readability */
-#ai-popup {
-    margin-top: 1em;
-    padding: 1em;
     background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* Add styling for #chat-history to improve readability */
-#chat-history {
-    max-height: 200px;
-    overflow-y: auto;
-    padding: 0.5em;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    margin-bottom: 1em;
+.container {
+    width: 300px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Add padding and font-size to chat input */
-#chat-input {
-    padding: 0.5em;
+#iframe {
     width: 100%;
-    font-size: 16px;
+    height: 50px;
+}
+
+#tetrisBoard {
+    width: 300px;
+    height: 500px;
+    position: relative;
+    background-color: #ddd;
+    border: 2px solid #333;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+}
+
+.block {
+    width: 60px;
+    height: 30px;
+    background-color: #4CAF50;
+    margin: 2px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font-weight: bold;
+    position: relative;
 }
