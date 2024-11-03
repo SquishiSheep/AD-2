@@ -5,6 +5,7 @@ import {
     UnorderedList,
     ListItem,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export default function Claude() {
     return (
@@ -76,9 +77,11 @@ export default function Claude() {
                             </ListItem>
                         ))}
                     </UnorderedList>
+                    <Link to="/">
                     <Box position="absolute" bottom="10px" left="10px" fontSize="xs" color="gold" style={{ textShadow: '0 0 10px rgba(255, 215, 0, 1)' }}>
                         &lt; Insert Coin to Continue &gt;
                     </Box>
+                    </Link>
                 </VStack>
             </Box>
         </>

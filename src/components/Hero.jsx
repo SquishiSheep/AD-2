@@ -102,7 +102,14 @@ const Hero = () => {
             fontWeight="bold"
             textShadow="0 0 15px #0ff, 0 0 25px #f0f"
           >
-            AD^2
+            Smart calendar
+          </Heading>
+          <Heading
+            fontSize="20px"
+            fontWeight="bold"
+            textShadow="0 0 15px #0ff, 0 0 25px #f0f"
+          >
+            With Claude  AI
           </Heading>
           <HStack spacing={5}>
             <Link to="/startplanning">
@@ -117,7 +124,7 @@ const Hero = () => {
                 borderRadius="8px"
                 textTransform="uppercase"
               >
-                Start Game
+                Add Task
               </Button>
             </Link>
             <Link to="/progress">

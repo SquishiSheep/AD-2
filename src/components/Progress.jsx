@@ -21,7 +21,7 @@ const Progress = () => {
   const [textPositions, setTextPositions] = useState([
     { top: '10%', left: '10%', text: 'Task 3' },
     { top: '40%', left: '50%', text: 'Task 2' },
-    { top: '70%', left: '10%', text: 'Task 1' },
+    { top: '70%', left: '10%', text: 'Appointment with doctor'},
   ]);
   const navigate = useNavigate();
 
@@ -86,8 +86,9 @@ const Progress = () => {
           <Text
             key={index}
             position="absolute"
+            pt="1rem"
             color="cyan"
-            fontSize="24px" // Larger font size for better visibility
+            fontSize="20px" // Larger font size for better visibility
             fontWeight="bold"
             textShadow="2px 2px 4px rgba(0, 0, 0, 0.7)" // Add text shadow for depth
             top={item.top}
