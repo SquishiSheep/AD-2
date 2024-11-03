@@ -13,6 +13,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
+import backgroundImage from './calender.png'; // Import the background image
 
 const Progress = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -74,7 +75,7 @@ const Progress = () => {
         height="80vh" // Adjust height to allow space for the button
         width="80vw" // Adjust width as needed
         position="relative"
-        backgroundImage="url('https://github.com/SquishiSheep/AD-2/blob/main/Untitled%20design%20(16).png?raw=true')"
+        backgroundImage={backgroundImage} // Set the background image
         backgroundSize="cover" // Change to cover to fill the box
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
