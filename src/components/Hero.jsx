@@ -1,86 +1,145 @@
-import { NavLink } from 'react-router-dom';
-import { Center, Button, HStack, Heading, VStack, Box } from "@chakra-ui/react";
-import { keyframes } from "@emotion/react";
+import { useEffect, useRef } from 'react';
+import { Box, Heading, Button, VStack, HStack } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
-export default function Hero() {
-  // Define the continuous falling animation
-  const fallAnimation = keyframes`
-    0% { transform: translateY(-50px); opacity: 0; }
-    10% { opacity: 1; }
-    90% { transform: translateY(100vh); opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
-  `;
+const Hero = () => {
+  const bgCanvasRef = useRef(null);
+  const gameCanvasRef = useRef(null);
 
-  // Array of colors for the blocks
-  const colors = ["#FFD700", "#FF6347", "#ADFF2F", "#1E90FF", "#FF69B4", "#20B2AA", "#FFA500"];
+  useEffect(() => {
+    const bgCanvas = bgCanvasRef.current;
+    const bgContext = bgCanvas.getContext('2d');
+    bgCanvas.width = 640;
+    bgCanvas.height = 640;
 
-  // Calculate the number of boxes based on screen width
-  const boxCount = Math.floor(window.innerWidth / 60); // 60px width for boxes
+    const grid = 32;
+    const tetrominos = {
+      I: [[1, 1, 1, 1]],
+      J: [[1, 0, 0], [1, 1, 1]],
+      L: [[0, 0, 1], [1, 1, 1]],
+      O: [[1, 1], [1, 1]],
+      S: [[0, 1, 1], [1, 1, 0]],
+      Z: [[1, 1, 0], [0, 1, 1]],
+      T: [[0, 1, 0], [1, 1, 1]],
+    };
+
+    const colors = ['#00ffff', '#ff0', '#ff00ff', '#0f0', '#f00', '#00f', '#ffa500'];
+    let fallingBlocks = [];
+
+    const createRandomBlock = () => {
+      const keys = Object.keys(tetrominos);
+      const name = keys[Math.floor(Math.random() * keys.length)];
+      const matrix = tetrominos[name];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const col = Math.floor(Math.random() * (bgCanvas.width / grid - matrix[0].length));
+      return { matrix, color, row: -matrix.length, col };
+    };
+
+    for (let i = 0; i < 5; i++) {
+      fallingBlocks.push(createRandomBlock());
+    }
+
+    const drawBackgroundBlocks = () => {
+      bgContext.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+      fallingBlocks.forEach((block, index) => {
+        bgContext.fillStyle = block.color;
+        for (let row = 0; row < block.matrix.length; row++) {
+          for (let col = 0; col < block.matrix[row].length; col++) {
+            if (block.matrix[row][col]) {
+              bgContext.fillRect((block.col + col) * grid, (block.row + row) * grid, grid - 1, grid - 1);
+            }
+          }
+        }
+
+        block.row += 0.1;
+        if (block.row * grid >= bgCanvas.height) {
+          fallingBlocks[index] = createRandomBlock();
+        }
+      });
+
+      requestAnimationFrame(drawBackgroundBlocks);
+    };
+
+    drawBackgroundBlocks();
+  }, []);
 
   return (
-    <Center height="100vh" position="relative" overflow="hidden" bg="rgba(255, 255, 255, 0.4)">
-      {/* Trivia Blocks */}
-      {[...Array(boxCount)].map((_, i) => {
-        // Generate random values for starting position and animation duration
-        const randomLeft = Math.random() * 100; // Random left position (0 to 100vw)
-        const randomDuration = 5 + Math.random() * 5; // Duration between 5s and 10s
-        const randomRotation = Math.random() * 360; // Random rotation
-
-        return (
-          <Box
-            key={i}
-            position="absolute"
-            top={`${Math.random() * -100}px`} // Random starting position off the top
-            left={`${randomLeft}vw`} // Random horizontal position across the width
-            width="50px"
-            height="50px"
-            bg={colors[i % colors.length]}
-            opacity="0.8"
-            animation={`${fallAnimation} ${randomDuration}s linear infinite`} // Continuous falling
-            borderRadius="md"
-            transform={`rotate(${randomRotation}deg)`}
-          />
-        );
-      })}
-
-      {/* Main Content */}
-      <Box 
-        zIndex="1" 
-        bg="white"
-        p={10} // Increased padding for a larger box
-        borderRadius="lg" 
-        boxShadow="lg" 
-        backdropFilter="blur(5px)" // Adjusted for a subtle frosted glass effect
-        border="2px solid rgba(0, 0, 0, 0.1)" // Optional for a border to enhance visibility
-        maxWidth="600px" // Optional max width
-        width="30%" // Optional to make the box responsive
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      height="100vh"
+      backgroundColor="black"
+    >
+      <Box
+        position="relative"
+        width="640px"
+        height="640px"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        border="2px solid white"
+        overflow="hidden"
+        backgroundColor="black"
       >
-        <VStack spacing={4}>
-          <Heading>AD^2</Heading>
-          <HStack spacing={4}>
-            <NavLink to="/startplanning">
+        {/* Background Canvas */}
+        <canvas ref={bgCanvasRef} style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 1 }}></canvas>
+
+        {/* Foreground Canvas */}
+        <canvas ref={gameCanvasRef} style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 2 }}></canvas>
+
+        {/* Overlay Content */}
+        <VStack
+          position="absolute"
+          zIndex={3}
+          color="white"
+          textAlign="center"
+          spacing={5}
+        >
+          <Heading
+            fontSize="48px"
+            fontWeight="bold"
+            textShadow="0 0 15px #0ff, 0 0 25px #f0f"
+          >
+            AD^2
+          </Heading>
+          <HStack spacing={5}>
+            <Link to="/startplanning">
               <Button
-                bg="teal.500"
+                bgGradient="linear(to-r, #00f, #f0f)"
                 color="white"
-                _hover={{ bg: "teal.200", color: "black" }}
-                transition="background-color 0.3s ease, color 0.3s ease"
+                _hover={{ bg: '#f0f', color: 'black', boxShadow: '0 0 15px #0ff, 0 0 25px #f0f' }}
+                fontSize="14px"
+                fontWeight="bold"
+                textShadow="0 0 8px #0ff, 0 0 16px #f0f"
+                border="2px solid #92e7ff"
+                borderRadius="8px"
+                textTransform="uppercase"
               >
-                Start Planning
+                Start Game
               </Button>
-            </NavLink>
-            <NavLink to="/progress">
+            </Link>
+            <Link to="/progress">
               <Button
-                bg="blue.500"
+                bgGradient="linear(to-r, #00f, #f0f)"
                 color="white"
-                _hover={{ bg: "blue.200", color: "black" }}
-                transition="background-color 0.3s ease, color 0.3s ease"
+                _hover={{ bg: '#f0f', color: 'black', boxShadow: '0 0 15px #0ff, 0 0 25px #f0f' }}
+                fontSize="14px"
+                fontWeight="bold"
+                textShadow="0 0 8px #0ff, 0 0 16px #f0f"
+                border="2px solid #92e7ff"
+                borderRadius="8px"
+                textTransform="uppercase"
               >
                 Progress
               </Button>
-            </NavLink>
+            </Link>
           </HStack>
         </VStack>
       </Box>
-    </Center>
+    </Box>
   );
-}
+};
+
+export default Hero;
