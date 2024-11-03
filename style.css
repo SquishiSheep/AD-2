@@ -1,5 +1,28 @@
-/* Ensure #falling-blocks container fits within #tetris-container */
-#falling-blocks {
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 2em;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 1em;
+}
+
+p {
+    max-width: 600px;
+    margin: 0 auto 2em;
+    color: #333;
+}
+
+/* Tetris container and block styling */
+#tetris-container {
     position: relative;
     width: 100%;
     height: 100%;
