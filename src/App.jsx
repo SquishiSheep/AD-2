@@ -1,8 +1,9 @@
 import Rootlayout from "./Layout/Rootlayout";
 import {Route, Routes}from "react-router-dom"
 import Hero from "./components/Hero";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
+import Progress from "./components/Progress";
+import StartPlanning from "./components/StartPlanning";
+import Claude from "./components/Claude";
 
 export default function App(){
   return(
@@ -10,8 +11,9 @@ export default function App(){
     <Rootlayout>
       <Routes>
         <Route path="/" element={<Hero/>}/>
-        <Route path="/portfolio" element={<Portfolio/>}/>
-        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/progress" element={<Progress/>}/>
+        <Route path="/startplanning" element={<StartPlanning/>}/>
+        <Route path="/claude" element={<Claude/>}/>
       </Routes>
       </Rootlayout>
     </>
