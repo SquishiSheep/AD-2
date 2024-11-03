@@ -1,6 +1,6 @@
 {
-  "homepage": "https://squishisheep.github.io/AD-2/",
-  "name": "smart calendar with claude ai",
+  "homepage": "https://SquishiSheep.github.io/AD-2",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b ai"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -18,7 +18,6 @@
     "@emailjs/browser": "^4.3.3",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
