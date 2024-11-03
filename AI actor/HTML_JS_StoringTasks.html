@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade AI Planner</title>
+    <style>
+        /* Basic CSS for layout */
+        #taskList {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-item {
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Planner</h1>
+    <input type="text" id="taskInput" placeholder="Add a new task">
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        // Array to store tasks
+        let tasks = [];
+
+        // Function to add a new task
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const task = taskInput.value.trim();
+            
+            if (task) {
+                tasks.push(task); // Add task to array
+                taskInput.value = ""; // Clear input field
+                displayTasks(); // Refresh task list display
+            }
+        }
+
+        // Function to remove a task by its index
+        function removeTask(index) {
+            tasks.splice(index, 1); // Remove task from array
+            displayTasks(); // Refresh task list display
+        }
+
+        // Function to display tasks in the HTML
+        function displayTasks() {
+            const taskList = document.getElementById("taskList");
+            taskList.innerHTML = ""; // Clear current tasks
+            
+            tasks.forEach((task, index) => {
+                // Create list item for each task
+                const taskItem = document.createElement("li");
+                taskItem.className = "task-item";
+                
+                // Task text
+                const taskText = document.createElement("span");
+                taskText.textContent = task;
+                
+                // Remove button
+                const removeButton = document.createElement("button");
+                removeButton.textContent = "Complete";
+                removeButton.onclick = () => removeTask(index); // Attach event to remove task
+
+                // Append text and button to the list item, and the item to the list
+                taskItem.appendChild(taskText);
+                taskItem.appendChild(removeButton);
+                taskList.appendChild(taskItem);
+            });
+        }
+    </script>
+
+</body>
+</html>
