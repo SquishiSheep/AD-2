@@ -1,0 +1,159 @@
+/* make it so that when people submit in page 2 it goes to the progress page ere
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Image with Overlayed Text</title>
+  <style>
+    /* Center the container */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Container with background image */
+    .canvas-container {
+      position: relative;
+      width: 640px;
+      height: 640px;
+      border: 2px solid white;
+      background-image: url('https://github.com/SquishiSheep/AD-2/blob/main/Untitled%20design%20(16).png?raw=true'); /* Replace with your hosted image URL */
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Position text elements on the image */
+    .text-overlay {
+      position: absolute;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Invisible buttons positioned behind the image */
+    .hidden-button {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+
+    /* Modal for displaying and editing text */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+    }
+
+    .modal-content {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .modal-content input {
+      width: 90%;
+      padding: 8px;
+      margin: 10px 0;
+    }
+
+    .button {
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 5px;
+      border-radius: 5px;
+    }
+
+    .button-edit { background-color: #4CAF50; color: white; }
+    .button-delete { background-color: #f44336; color: white; }
+    .button-close { background-color: #555; color: white; }
+  </style>
+</head>
+<body>
+  <div class="canvas-container">
+    <!-- Text overlays with customizable x and y positions -->
+    <div class="text-overlay" style="top: 100px; left: 100px;" data-text="Task 3">Text 3</div>
+    <div class="text-overlay" style="top: 270px; left: 300px;" data-text="Task 2">Text 2</div>
+    <div class="text-overlay" style="top: 450px; left: 100px;" data-text="Task 1">Text 1</div>
+
+    <!-- Hidden buttons positioned in specific places -->
+    <div class="hidden-button" style="top: 100px; left: 100px;" data-text="Task 3"></div>
+    <div class="hidden-button" style="top: 270px; left: 300px;" data-text="Task 2"></div>
+    <div class="hidden-button" style="top: 450px; left: 100px;" data-text="Task 1"></div>
+  </div>
+
+  <!-- Modal for editing and deleting text -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <p id="modal-text"></p>
+      <input type="text" id="edit-text-input" placeholder="Edit text here">
+      <button class="button button-edit" onclick="saveText()">Save</button>
+      <button class="button button-delete" onclick="deleteText()">Delete</button>
+      <button class="button button-close" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+<script>
+  const modal = document.getElementById("modal");
+  const modalText = document.getElementById("modal-text");
+  const editTextInput = document.getElementById("edit-text-input");
+  let currentTextElement = null; // To keep track of the current text being edited
+
+  // Add event listeners to hidden buttons to show modal on click
+  document.querySelectorAll('.hidden-button').forEach(button => {
+    button.addEventListener('mouseenter', () => button.style.cursor = 'pointer');
+    button.addEventListener('click', (e) => {
+      const textContent = e.target.getAttribute('data-text');
+      currentTextElement = document.querySelector(`.text-overlay[data-text="${textContent}"]`);
+      showModal(currentTextElement);
+    });
+  });
+
+  function showModal(textElement) {
+    modal.style.display = "flex";
+    modalText.innerText = textElement.innerText;
+    editTextInput.value = textElement.innerText;
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+    editTextInput.value = "";
+  }
+
+  function saveText() {
+    if (currentTextElement) {
+      currentTextElement.innerText = editTextInput.value;
+      currentTextElement.setAttribute("data-text", editTextInput.value); // Update the data-text attribute
+    }
+    closeModal();
+  }
+
+  function deleteText() {
+    if (currentTextElement) {
+      currentTextElement.remove(); // Remove the text element
+      document.querySelector(`.hidden-button[data-text="${currentTextElement.getAttribute("data-text")}"]`).remove(); // Remove the corresponding hidden button
+    }
+    closeModal();
+  }
+</script>
+</body>
+</html>

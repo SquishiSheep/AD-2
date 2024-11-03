@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Tetris Text Game</title>
+  <style>
+    /* Basic reset and setup */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #222;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Tetris board setup */
+    .tetris-board {
+      width: 640px;
+      height: 640px;
+      border: 4px solid #00ffcc;
+      background-color: black;
+      position: relative;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Neon Tetris blocks */
+    .tetris-row {
+      display: flex;
+      gap: 2px;
+      justify-content: center;
+      margin-bottom: 2px;
+    }
+
+    .tetris-block {
+      width: 60px;
+      height: 60px;
+      background-color: #00ffcc;
+      box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    /* Typing block (top) */
+    .typing-block {
+      width: 120px;
+      height: 60px;
+      background-color: #ff4d4d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 240px; /* Adjust to align with the bottom row */
+      color: white;
+      font-size: 0.9rem;
+      font-weight: bold;
+      overflow: hidden;
+      transition: top 1s ease-in-out;
+    }
+
+    .typing-input {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      color: white;
+      outline: none;
+      text-align: center;
+      caret-color: white;
+      font-size: 0.9rem;
+    }
+
+    /* Tetris shapes */
+    .shape-line {
+      display: flex;
+      gap: 2px;
+    }
+
+    .shape-L {
+      display: flex;
+      gap: 2px;
+      flex-wrap: wrap;
+      width: 120px;
+    }
+
+    .shape-T {
+      display: flex;
+      gap: 2px;
+      flex-wrap: wrap;
+      width: 180px;
+    }
+  </style>
+</head>
+<body>
+  <div class="tetris-board" id="tetrisBoard">
+    <!-- Bottom row with various Tetris shapes -->
+
+    <!-- Line Shape -->
+    <div class="tetris-row">
+      <div class="shape-line">
+        <div class="tetris-block">Line</div>
+        <div class="tetris-block"></div>
+        <div class="tetris-block"></div>
+        <div class="tetris-block"></div>
+      </div>
+    </div>
+
+    <!-- L Shape -->
+    <div class="tetris-row">
+      <div class="shape-L">
+        <div class="tetris-block">L</div>
+        <div class="tetris-block"></div>
+        <div class="tetris-block"></div>
+        <div style="width: 60px;"></div>
+        <div class="tetris-block"></div>
+      </div>
+    </div>
+
+    <!-- T Shape -->
+    <div class="tetris-row">
+      <div class="shape-T">
+        <div class="tetris-block"></div>
+        <div class="tetris-block">T</div>
+        <div class="tetris-block"></div>
+        <div style="width: 60px;"></div>
+        <div class="tetris-block"></div>
+      </div>
+    </div>
+
+    <!-- Typing block (top) -->
+    <div class="typing-block" id="typingBlock">
+      <input
+        type="text"
+        id="typingInput"
+        class="typing-input"
+        placeholder="Type here..."
+      />
+    </div>
+  </div>
+
+  <script>
+    // Select elements
+    const typingBlock = document.getElementById('typingBlock');
+    const typingInput = document.getElementById('typingInput');
+    const tetrisBoard = document.getElementById('tetrisBoard');
+
+    // Submit the input and drop the block
+    typingInput.addEventListener('keypress', function (event) {
+      if (event.key === 'Enter') {
+        // Prevent typing after submission
+        typingInput.disabled = true;
+
+        // Drop animation
+        typingBlock.style.top = '100%'; // Adjust based on final position
+
+        // After the animation completes, add a new row and reset typing block
+        setTimeout(() => {
+          addTextBlock(typingInput.value);
+          resetTypingBlock();
+        }, 1000); // Time should match CSS transition duration
+      }
+    });
+
+    // Function to add the text block at the bottom
+    function addTextBlock(text) {
+      const newRow = document.createElement('div');
+      newRow.classList.add('tetris-row');
+
+      const newBlock = document.createElement('div');
+      newBlock.classList.add('tetris-block');
+      newBlock.textContent = text;
+
+      newRow.appendChild(newBlock);
+      tetrisBoard.insertBefore(newRow, tetrisBoard.firstChild);
+    }
+
+    // Reset typing block for new input
+    function resetTypingBlock() {
+      typingBlock.style.top = '0';
+      typingInput.value = '';
+      typingInput.disabled = false;
+      typingInput.focus();
+    }
+  </script>
+</body>
+</html>
