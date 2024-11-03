@@ -8,7 +8,7 @@ export default function Chatbox() {
   const [userInput, setUserInput] = useState("");
   const [chatHistory, setChatHistory] = useState([
     {
-      output: "I am an AI assistant. How can I help you today?", // Initial response from the assistant
+      output: "How can I help you today?", // Initial response from the assistant
     }
   ]);
   const [awaitingDetails, setAwaitingDetails] = useState(false); // Track if we're awaiting details for an appointment
